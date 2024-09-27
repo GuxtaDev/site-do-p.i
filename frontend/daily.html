@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportsle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+<body>
+    <div class="background"></div>
+    
+    <template id="error-template">
+        <div class="tentativa">
+            <div class="error-name-container">
+                <p class="try-message"></p>
+            </div>
+            <div class="img_tentativa" id="sex"></div>
+            <div class="img_tentativa" id="sport"></div>
+            <div class="img_tentativa" id="country"></div>
+            <div class="img_tentativa" id="status"></div>
+            <div class="img_tentativa" id="age"></div>
+        </div>
+    </template>
+
+    <div id="game">
+        <h1 class="bayon-regular">Sportsle</h1>
+
+        <div id="myPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="closePopup()">&times;</span>
+                <h1>Você ganhou!</h1>
+                <p id="jogador"></p>
+                <p id="tentativas_popup"></p>
+                <p id="time_popup"></p>
+            </div>
+        </div>
+
+        <div id="tutorial" class="popup_tutorial">
+            <div class="popup-content">
+                <span class="close" onclick="closePopupTutorial()">&times;</span>
+                <h1>Como Jogar?</h1>
+                <p>O objetivo do jogo é adivinhar o atleta com base nas informações mostradas á baixo.</p>
+                <div class="info">
+                    <p>Nome</p>
+                    <p>Gênero</p> 
+                    <p>Esporte</p>
+                    <p>Nacionalidade</p>
+                    <p>Atividade</p>
+                    <p>Idade</p>
+                </div>
+                <p>Digite o nome de um atleta no campo de entrada e selecione o nome correspondente. Se não aparecer nenhum o jogador que você procura ainda não foi adicionado ao jogo.</p>
+                <p>As caracteristícas corretas serão indicadas pela cor verde, elas são consideradas corretas quando forem iguais ao atleta que você terá que acertar.</p>
+                <p>Na caracteristíca de idade do atleta aparecera um degradê entre a cor vermelho e verde, a direção da cor representa se o atleta é mais novo ou mais velho do que o adivinhado. se a cor verde estiver para cima é mais velho para baixo mais novo.</p>
+                <p>O jogo acabará quando o atleta correto for acertado.</p>
+            </div>
+        </div>
+
+        <div id="input_guess">
+            <p>Adivinhe o Atleta:</p>
+            <p id="tentativas">Tentativas: </p>
+            <div id="guess_block">
+                <input type="text" id="guess" placeholder="Nome do Atleta..." onfocus="showAllSuggestions()" onblur="hideAllSuggestions()" oninput="showSuggestions()">
+                <i class="fa-regular fa-arrow-turn-down-left"></i>
+            </div>
+            <div id="suggestions"></div>
+        </div>
+        
+        <div class="legenda">
+            <p>Nome</p>
+            <p>Gênero</p> 
+            <p>Esporte</p>
+            <p>País</p>
+            <p>Ativo</p>
+            <p>Idade</p>
+          </div>
+        <div id="tries"></div>
+    </div>
+    <script src="daily.js"></script>
+</body>
+</html>
